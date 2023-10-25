@@ -3,9 +3,10 @@ import { gql } from '@apollo/client';
 
 
 const USER_DATA = gql`
-query {
+query USER_DATA {
   viewer {
     name
+    login
     avatarUrl
     bio
     followers {
@@ -21,6 +22,9 @@ query {
         updatedAt
         description
         isPrivate
+        owner {
+          login
+        }
         languages(last: 4) {
           nodes {
             name

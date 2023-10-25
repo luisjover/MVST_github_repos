@@ -1,17 +1,18 @@
 
 import USER_DATA from "./graphql/queries/user.queries";
 import { useQuery } from "@apollo/client";
+import MainPage from "./pages/MainPage";
 
 
 function App() {
 
-  const result = useQuery(USER_DATA)
-  console.log(result)
+  const { data, loading } = useQuery(USER_DATA)
+  console.log(data, loading)
 
 
   return (
 
-    <div>App</div>
+    <MainPage />
 
   )
 }
