@@ -1,54 +1,12 @@
-import { useEffect } from "react";
-const { VITE_GITHUB_TOKEN: token } = import.meta.env;
+
+import USER_DATA from "./graphql/queries/user.queries";
+import { useQuery } from "@apollo/client";
 
 
 function App() {
 
-  useEffect(() => {
-
-    fetch("https://api.github.com/graphql", {
-      method: "POST",
-      headers: {
-        Authorization: `bearer ${token}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        query: `
-        query {
-          viewer {
-            name
-            avatarUrl
-            bio
-            followers {
-              totalCount
-            }
-            following {
-              totalCount
-            }
-            repositories(last: 20) {
-              nodes {
-                name
-                createdAt
-                updatedAt
-                description
-                isPrivate
-                languages(last: 4) {
-                  nodes {
-                    name
-                  }
-                }
-              }
-            }
-          }
-        }
-        `
-      })
-
-    })
-      .then(res => res.json())
-      .then(data => console.log(data))
-
-  }, [])
+  const result = useQuery(USER_DATA)
+  console.log(result)
 
 
   return (
