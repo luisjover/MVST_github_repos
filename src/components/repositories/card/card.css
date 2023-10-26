@@ -1,0 +1,16 @@
+.card-container {
+    border-bottom: 1px solid #e1e4e8;
+    padding: 24px 0;
+}
+
+.language-color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}

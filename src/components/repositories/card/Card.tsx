@@ -1,21 +1,24 @@
-
+import "./card.css";
 
 type Props = {
     repo: {
         name: string;
+        createdAt: string;
+        updatedAt: string;
         description: string;
-        updated_at: string;
-        language: {
+        isPrivate: boolean;
+        primaryLanguage: {
             name: string;
             color: string;
-        }
+        };
 
     }
 }
 
 const Card = ({ repo }: Props) => {
+
     return (
-        <div>
+        <div className="card-container">
             <div>
                 <h3>{repo.name}</h3>
             </div>
@@ -23,11 +26,18 @@ const Card = ({ repo }: Props) => {
                 <p>{repo.description}</p>
             </div>
             <div>
-                <span>{repo.language.name}</span>
-                <span>{repo.updated_at}</span>
+                <span
+                    className="language-color"
+                    style={{
+                        backgroundColor: repo.primaryLanguage?.color || "transparent",
+                    }}
+                >
+                </span>
+                <span>{repo.primaryLanguage?.name}</span>
+                <span>Updated at {repo.updatedAt}</span>
             </div>
-        </div>
+        </div >
     )
 }
 
-export default Card
+export default Card;

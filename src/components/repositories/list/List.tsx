@@ -1,11 +1,24 @@
 
+import RepoData from "../../../types/repoData";
+import Card from "../card/Card";
 
-type Props = {}
 
-const List = (props: Props) => {
+
+type Props = {
+    repositories: RepoData[];
+}
+
+
+
+const List = ({ repositories }: Props) => {
+
+
     return (
-        <div>
-        </div>
+        <>
+            {repositories?.map((repo, index) => (
+                <Card key={index} repo={repo} />
+            ))}
+        </>
     )
 }
 
