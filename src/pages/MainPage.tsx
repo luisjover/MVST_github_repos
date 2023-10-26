@@ -1,23 +1,47 @@
 
 import "./mainpage.css";
-import USER_DATA from "../graphql/queries/user.queries";
-import { useQuery } from "@apollo/client";
 import { Sidebar } from "../components/sidebar";
 import { Content } from "../components/repositories";
-
-
+import { FilterProvider } from "../contexts/FilterContext";
+import { useLazyQuery } from "@apollo/client";
+import USER_DATA from "../graphql/queries/user.queries";
+import DotLoader from "react-spinners/DotLoader";
+import UserData from "../types/userData";
+import { useEffect, useState } from "react";
 
 const MainPage = () => {
 
-    const { data, loading } = useQuery(USER_DATA)
-    console.log(data, loading)
+    const [getUserData, result] = useLazyQuery(USER_DATA);
+    const [userData, setUserData] = useState<UserData | null>(null);
+
+
+    useEffect(() => {
+        getUserData({
+            variables: {
+                login: "luisjover",
+            },
+        });
+
+    }, [])
+
+    useEffect(() => {
+        if (result && result.data) {
+            setUserData(result.data.user);
+        }
+    }, [result])
+
 
     return (
 
         <main className="main-container">
-            <Sidebar data={data} />
-            <Content />
-
+            {userData
+                ? <>
+                    <Sidebar user={userData} />
+                    <FilterProvider>
+                        <Content totalRepos={userData.repositories.totalCount} />
+                    </FilterProvider>
+                </>
+                : <DotLoader color="#c68112" />}
         </main>
 
     )
