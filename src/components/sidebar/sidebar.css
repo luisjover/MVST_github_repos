@@ -1,0 +1,25 @@
+.sidebar-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 300px;
+    height: 80dvh;
+    padding-top: 20px;
+}
+
+.sidebar-image {
+    border: 1px solid lightgray;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.sidebar-userdata-container,
+.sidebar-bio-container,
+.sidebar-followsinfo-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}

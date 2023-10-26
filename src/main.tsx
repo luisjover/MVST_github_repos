@@ -1,4 +1,5 @@
 
+import "./css/reset.css";
 import ReactDOM from 'react-dom/client';
 import { ApolloProvider } from '@apollo/client';
 import GraphqlClient from './graphql/client/graphql.client.ts';

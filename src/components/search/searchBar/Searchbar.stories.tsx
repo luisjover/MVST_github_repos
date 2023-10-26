@@ -11,10 +11,10 @@ const Template: StoryFn<SearchBarProps> = (args) => <SearchBar {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-    message: "Default SearchBar",
+    type: "Default",
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-    message: "Secondary SearchBar",
+    type: "Secondary",
 };
