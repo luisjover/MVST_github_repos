@@ -1,0 +1,12 @@
+.search-container {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    gap: 20px;
+    border-bottom: 1px solid #e1e4e8;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+}

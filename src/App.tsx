@@ -1,15 +1,12 @@
 
-import Layout from "./layout/Layout";
-import MainPage from "./pages/MainPage";
+import { RouterPaths } from "./routes/RouterPaths.routes";
 
 
 const App = () => {
 
   return (
 
-    <Layout>
-      <MainPage />
-    </Layout>
+    <RouterPaths />
 
   )
 }
