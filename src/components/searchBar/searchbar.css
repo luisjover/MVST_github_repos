@@ -1,0 +1,18 @@
+/* Base style for search input */
+.search-input {
+    max-width: 500px;
+    padding: 5px 10px;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: #f6f8fa;
+    color: #24292e;
+    transition: border 0.3s;
+}
+
+/* Style dor input focus */
+.search-input:focus {
+    outline: none;
+    border-color: #0366d6;
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
+}
