@@ -16,10 +16,10 @@ const authLink = setContext((_, { headers }) => {
   }
 })
 
-const GraphqlClient = new ApolloClient({
+const Client = new ApolloClient({
   connectToDevTools: true,
   cache: new InMemoryCache(),
   link: authLink.concat(httpLink)
 })
 
-export default GraphqlClient;
+export default Client;

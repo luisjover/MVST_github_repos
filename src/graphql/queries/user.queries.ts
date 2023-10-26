@@ -3,10 +3,9 @@ import { gql } from '@apollo/client';
 
 
 const USER_DATA = gql`
-query USER_DATA {
-  viewer {
+query UserDataByLogin($login: String!) {
+  user (login: $login) {
     name
-    login
     avatarUrl
     bio
     followers {
@@ -15,25 +14,12 @@ query USER_DATA {
     following {
       totalCount
     }
-    repositories(last: 20) {
-      nodes {
-        name
-        createdAt
-        updatedAt
-        description
-        isPrivate
-        owner {
-          login
-        }
-        languages(last: 4) {
-          nodes {
-            name
-          }
-        }
-      }
+    repositories {
+      totalCount
     }
+    
   }
-}
+} 
 `
 
 export default USER_DATA;
