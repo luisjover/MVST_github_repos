@@ -1,6 +1,7 @@
 /* Base style for search input */
 .search-input {
-    max-width: 500px;
+    width: 100%;
+    min-width: 200px;
     padding: 5px 10px;
     border: 1px solid #d1d5da;
     border-radius: 6px;

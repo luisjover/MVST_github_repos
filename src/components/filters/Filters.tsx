@@ -42,13 +42,13 @@ const Filters = ({ languages }: Props) => {
         });
 
         const sortOptions: OptionTypes[] = [
-            { value: "last-updated", label: "Last updated" },
+            { value: "last-updated", label: "Last Updated" },
             { value: "name", label: "Name" },
         ];
 
         setSelectVariations([
             { filterType: "Type", options: typeOptions },
-            { filterType: "Language", options: languageOptions },
+            { filterType: "Languages", options: languageOptions },
             { filterType: "Sort", options: sortOptions },
         ]);
 

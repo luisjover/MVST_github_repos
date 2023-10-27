@@ -1,6 +1,7 @@
 .search-filters {
     display: flex;
     align-items: center;
+    gap: 10px;
 }
 
 .filter-select {
@@ -10,7 +11,6 @@
     border-radius: 6px;
     font-size: 16px;
     padding: 5px 10px;
-    margin-right: 10px;
     transition: border 0.3s;
     cursor: pointer;
 }
@@ -19,4 +19,10 @@
     outline: none;
     border-color: #0366d6;
     box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
+}
+
+@media only screen and (max-width: 780px) {
+    .search-filters {
+        flex-wrap: wrap;
+    }
 }

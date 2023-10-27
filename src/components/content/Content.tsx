@@ -2,7 +2,7 @@
 import "./content.css";
 import { List } from "../repositories";
 import SearchBar from "../searchBar/SearchBar"
-import { useLazyQuery, useQuery } from "@apollo/client";
+import { useLazyQuery } from "@apollo/client";
 import DotLoader from "react-spinners/DotLoader";
 import ALL_REPOS from "../../graphql/queries/repos.queries";
 import { useEffect, useState } from "react";
