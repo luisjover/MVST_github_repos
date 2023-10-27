@@ -39,11 +39,9 @@ const Filters = ({ languages }: Props) => {
             }
 
         } else {
-            if (e.target.value === "last-updated") {
-                changeSortFilter(null);
-            } else {
-                changeSortFilter(e.target.value);
-            }
+
+            changeSortFilter(e.target.value);
+
         }
     }
 

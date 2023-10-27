@@ -20,7 +20,7 @@ const List = ({ repositories }: Props) => {
     useEffect(() => {
 
 
-        let partialFiltered = repositories;
+        let partialFiltered = [...repositories];
 
         // Filter by SearchParams on Searchbar
         if (searchFilter) {
@@ -42,26 +42,13 @@ const List = ({ repositories }: Props) => {
         }
 
         // Sort by last updated or name on Sort Select
-        if (sortFilter === "last-updated") {
-            partialFiltered = partialFiltered.sort((a, b) => {
-                if (a.updatedAt < b.updatedAt) {
-                    return 1;
-                } else if (a.updatedAt > b.updatedAt) {
-                    return -1;
-                } else {
-                    return 0;
-                }
-            })
-        } else if (sortFilter === "name") {
-            partialFiltered = partialFiltered.sort((a, b) => {
-                if (a.name < b.name) {
-                    return -1;
-                } else if (a.name > b.name) {
-                    return 1;
-                } else {
-                    return 0;
-                }
-            })
+        if (sortFilter === "name") {
+            partialFiltered.sort((a, b) => a.name.localeCompare(b.name));
+            console.log(partialFiltered);
+        } else if (sortFilter === "last-updated") {
+            partialFiltered.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
+            console.log(partialFiltered);
+
         }
 
         setFilteredRepos(partialFiltered);
