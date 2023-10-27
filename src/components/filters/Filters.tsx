@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
 import "./filters.css";
+import useFilterContext from "../../utils/hooks/useFilterContext";
 
 type Props = {
     languages: string[];
@@ -21,6 +22,30 @@ type SelectTypes = {
 const Filters = ({ languages }: Props) => {
 
     const [selectVariations, setSelectVariations] = useState<SelectTypes[] | null>(null);
+    const { changeTypeFilter, changeLanguageFilter, changeSortFilter } = useFilterContext();
+
+    const handleFilter = (e: React.ChangeEvent<HTMLSelectElement>, filterType: string) => {
+        if (filterType === "Type") {
+            if (e.target.value === "all") {
+                changeTypeFilter(null);
+            } else {
+                changeTypeFilter(e.target.value);
+            }
+        } else if (filterType === "Languages") {
+            if (e.target.value === "all") {
+                changeLanguageFilter(null);
+            } else {
+                changeLanguageFilter(e.target.value);
+            }
+
+        } else {
+            if (e.target.value === "last-updated") {
+                changeSortFilter(null);
+            } else {
+                changeSortFilter(e.target.value);
+            }
+        }
+    }
 
 
     useEffect(() => {
@@ -29,8 +54,6 @@ const Filters = ({ languages }: Props) => {
             { value: "all", label: "All" },
             { value: "public", label: "Public" },
             { value: "private", label: "Private" },
-            { value: "owner", label: "Owner" },
-            { value: "contributor", label: "Contributor" },
         ];
 
         const languageOptions: OptionTypes[] = [
@@ -62,6 +85,7 @@ const Filters = ({ languages }: Props) => {
                     defaultValue={""}
                     key={index}
                     className="filter-select"
+                    onChange={(e) => handleFilter(e, selectVariation.filterType)}
                 >
                     <option value="" disabled>{selectVariation.filterType}</option>
                     {selectVariation.options.map((option, index) => (

@@ -1,6 +1,7 @@
 
-import UserData from "../../types/userData";
 import "./sidebar.css";
+import UserData from "../../types/userData";
+import { RiUserFollowLine } from "react-icons/ri";
 
 type Props = {
     user: UserData
@@ -23,6 +24,7 @@ const Sidebar = ({ user }: Props) => {
                 <p>{user.bio}</p>
             </div>
             <div className="sidebar-followsinfo-container">
+                <RiUserFollowLine className="followers-icon" />
                 {user.followers.totalCount} followers · {user.following.totalCount} following
             </div>
 

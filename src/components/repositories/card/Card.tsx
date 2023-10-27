@@ -17,6 +17,8 @@ type Props = {
 
 const Card = ({ repo }: Props) => {
 
+    const updateDate = repo.updatedAt.split("T")[0];
+
     return (
         <div className="card-container">
             <div>
@@ -34,7 +36,7 @@ const Card = ({ repo }: Props) => {
                 >
                 </span>
                 <span>{repo.primaryLanguage?.name}</span>
-                <span>Updated at {repo.updatedAt}</span>
+                <span className="updated-info">Updated at {updateDate}</span>
             </div>
         </div >
     )

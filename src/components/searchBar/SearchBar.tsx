@@ -1,6 +1,6 @@
 
 import "./searchbar.css";
-import useFilterContext from "../../utils/hooks/FilterProvider";
+import useFilterContext from "../../utils/hooks/useFilterContext";
 
 
 export type SearchBarProps = {
@@ -9,8 +9,15 @@ export type SearchBarProps = {
 
 const SearchBar = (props: SearchBarProps) => {
 
-  const { currentFilter, changeFilter } = useFilterContext();
+  const { searchFilter, changeSearchFilter } = useFilterContext();
 
+  const handleSearchFilterChange = (searchParam: string) => {
+    if (searchParam === "") {
+      changeSearchFilter(null);
+    } else {
+      changeSearchFilter(searchParam);
+    }
+  }
 
 
 
@@ -20,8 +27,8 @@ const SearchBar = (props: SearchBarProps) => {
       className="search-input"
       type="text"
       placeholder="Search..."
-      value={currentFilter}
-      onChange={(e) => changeFilter(e.target.value)}
+      value={searchFilter ? searchFilter : ""}
+      onChange={(e) => handleSearchFilterChange(e.target.value)}
     />
 
   )
