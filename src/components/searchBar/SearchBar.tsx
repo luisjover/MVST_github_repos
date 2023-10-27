@@ -7,7 +7,7 @@ export type SearchBarProps = {
   type: string,
 }
 
-const SearchBar = (props: SearchBarProps) => {
+const SearchBar = () => {
 
   //Custom hook to get the needed filter context states to use the searchbar
   const { searchFilter, changeSearchFilter } = useFilterContext();
