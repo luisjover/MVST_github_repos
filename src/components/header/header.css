@@ -1,9 +1,38 @@
 .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
-    color: darkslategray;
-    height: 10dvh;
-    background-color: lightcoral;
+    gap: 20px;
+    color: white;
+    height: 15dvh;
+    background-color: #7ab8ff;
+}
+
+.header-icon {
+    width: 50px;
+    height: 50px;
+    color: white;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 600px) {
+    .header {
+        flex-direction: column;
+    }
+}
+
+@media only screen and (max-width: 460px) {
+    .header-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .header-title {
+        display: none;
+    }
 }

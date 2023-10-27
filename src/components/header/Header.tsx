@@ -1,10 +1,13 @@
 
 import "./header.css";
+import { AiFillGithub } from "react-icons/ai";
+
 
 const Header = () => {
     return (
         <header className="header">
-            <h1>Github Profile</h1>
+            <AiFillGithub className="header-icon" />
+            <h1 className="header-title">My Github Repositories</h1>
         </header>
     )
 }

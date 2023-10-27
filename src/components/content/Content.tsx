@@ -10,13 +10,9 @@ import RepoData from "../../types/repoData";
 import Filters from "../filters/Filters";
 
 
-
-
 type Props = {
     totalRepos: number | undefined
 }
-
-
 
 
 const Content = ({ totalRepos }: Props) => {
@@ -48,6 +44,7 @@ const Content = ({ totalRepos }: Props) => {
                 }
             });
 
+            console.log(result.data)
             setUniqueLanguages(uniqueLanguagesArray);
         }
     }, [result]);

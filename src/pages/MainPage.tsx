@@ -27,6 +27,8 @@ const MainPage = () => {
     useEffect(() => {
         if (result && result.data) {
             setUserData(result.data.user);
+
+            console.log(result.data.user)
         }
     }, [result])
 
