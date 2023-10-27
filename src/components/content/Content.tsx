@@ -58,7 +58,7 @@ const Content = ({ totalRepos }: Props) => {
         <div className="content-container">
             {uniqueLanguages
                 ? <div className="search-container">
-                    <SearchBar type="Default" />
+                    <SearchBar />
                     <Filters languages={uniqueLanguages} />
                 </div>
                 : <DotLoader color="#c68112" />}

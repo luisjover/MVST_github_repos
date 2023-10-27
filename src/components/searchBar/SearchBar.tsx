@@ -3,10 +3,6 @@ import "./searchbar.css";
 import useFilterContext from "../../utils/hooks/useFilterContext";
 
 
-export type SearchBarProps = {
-  type: string,
-}
-
 const SearchBar = () => {
 
   //Custom hook to get the needed filter context states to use the searchbar
