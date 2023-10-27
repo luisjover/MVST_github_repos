@@ -25,6 +25,8 @@ The tests have not been fully implemented
 
 Storybook have bien partially implemented
 
+Check deployed project <a href="https://mvst-github-repos.vercel.app/">here</a>
+
 
 ## Technologies
 - HTML
@@ -76,4 +78,4 @@ npm test
 - Implement StoryBook and create variants for components
 
 
-## Check my Repos! 🥷🏽
+## <a href="https://mvst-github-repos.vercel.app/">Check my Repos!</a> 🥷🏽
