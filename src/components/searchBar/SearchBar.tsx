@@ -9,8 +9,10 @@ export type SearchBarProps = {
 
 const SearchBar = (props: SearchBarProps) => {
 
+  //Custom hook to get the needed filter context states to use the searchbar
   const { searchFilter, changeSearchFilter } = useFilterContext();
 
+  //Function to handle the search filter changes and mutate the context state
   const handleSearchFilterChange = (searchParam: string) => {
     if (searchParam === "") {
       changeSearchFilter(null);

@@ -1,22 +1,13 @@
+import RepoData from "../../../types/repoData";
 import "./card.css";
 
 type Props = {
-    repo: {
-        name: string;
-        createdAt: string;
-        updatedAt: string;
-        description: string;
-        isPrivate: boolean;
-        primaryLanguage: {
-            name: string;
-            color: string;
-        };
-
-    }
+    repo: RepoData
 }
 
 const Card = ({ repo }: Props) => {
 
+    //Get the desired format date from the updatedAt string
     const updateDate = repo.updatedAt.split("T")[0];
 
     return (

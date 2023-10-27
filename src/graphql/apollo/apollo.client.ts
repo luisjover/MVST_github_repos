@@ -6,6 +6,7 @@ const httpLink = createHttpLink({
   uri: "https://api.github.com/graphql"
 });
 
+// AuthLink to adds the token to the request's headers
 const authLink = setContext((_, { headers }) => {
 
   return {
@@ -16,8 +17,11 @@ const authLink = setContext((_, { headers }) => {
   }
 })
 
+// Apollo client initialization
 const Client = new ApolloClient({
+  // To use the Apollo DevTools on Chrome
   connectToDevTools: true,
+  // Cache implementation
   cache: new InMemoryCache(),
   link: authLink.concat(httpLink)
 })

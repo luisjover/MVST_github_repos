@@ -11,7 +11,9 @@ import { useEffect, useState } from "react";
 
 const MainPage = () => {
 
+    //LazyQuery to get the user data when desired
     const [getUserData, result] = useLazyQuery(USER_DATA);
+    //State to store the user data
     const [userData, setUserData] = useState<UserData | null>(null);
 
 
@@ -28,7 +30,6 @@ const MainPage = () => {
         if (result && result.data) {
             setUserData(result.data.user);
 
-            console.log(result.data.user)
         }
     }, [result])
 

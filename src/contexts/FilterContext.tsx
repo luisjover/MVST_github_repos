@@ -12,6 +12,7 @@ type FilterContextType = {
 
 }
 
+//Context to store the filter states and the functions to change them
 export const currentFilterContext = createContext<FilterContextType>({
     searchFilter: null,
     changeSearchFilter: () => { },
@@ -23,7 +24,7 @@ export const currentFilterContext = createContext<FilterContextType>({
     changeSortFilter: () => { }
 });
 
-
+//Provider to wrap the desired components and provide the context to them
 export function FilterProvider({ ...props }) {
     const [searchFilter, setSearchFilter] = useState<string | null>(null);
     const [typeFilter, setTypeFilter] = useState<string | null>(null);

@@ -12,7 +12,9 @@ type Props = {
 
 const List = ({ repositories }: Props) => {
 
+    //State used to store the filtered repositories after being completely filtered
     const [filteredRepos, setFilteredRepos] = useState<RepoData[] | null>(null);
+    //Custom hook to get the filter context states to know which filter is being apllied
     const { searchFilter, typeFilter, languageFilter, sortFilter } = useFilterContext();
 
 
@@ -20,6 +22,7 @@ const List = ({ repositories }: Props) => {
     useEffect(() => {
 
 
+        //Partial filtered array used to store the repositories after being filtered by each filter
         let partialFiltered = [...repositories];
 
         // Filter by SearchParams on Searchbar
@@ -51,6 +54,7 @@ const List = ({ repositories }: Props) => {
 
         }
 
+        //Set the filtered repositories state with the completely filtered array
         setFilteredRepos(partialFiltered);
 
     }, [searchFilter, typeFilter, languageFilter, sortFilter])

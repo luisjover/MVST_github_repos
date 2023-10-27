@@ -17,8 +17,11 @@ type Props = {
 
 const Content = ({ totalRepos }: Props) => {
 
+    //State used to store the repositories data
     const [reposData, setReposData] = useState<RepoData[] | null>(null);
+    //State used to store the unique languages of the repositories
     const [uniqueLanguages, setUniqueLanguages] = useState<string[] | null>(null);
+    //Lazy query to get the repositories data
     const [getReposData, result] = useLazyQuery(ALL_REPOS);
 
     useEffect(() => {
@@ -35,6 +38,8 @@ const Content = ({ totalRepos }: Props) => {
             const uniqueLanguagesArray: string[] = [];
             const allRepositories: RepoData[] = result.data.user.repositories.nodes;
             setReposData(allRepositories);
+
+            //Loop through all the repositories and store the unique languages in an array
             allRepositories.forEach((repo) => {
                 const primaryLanguage = repo.primaryLanguage?.name;
                 if (primaryLanguage) {
@@ -44,7 +49,7 @@ const Content = ({ totalRepos }: Props) => {
                 }
             });
 
-            console.log(result.data)
+            //Set the unique languages array to the state
             setUniqueLanguages(uniqueLanguagesArray);
         }
     }, [result]);
