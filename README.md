@@ -17,9 +17,13 @@
 
 ## About
 
-Small application that collects GitHub API v4 repositories and returns them in an interface prepared to filter by type and host language, as well as search by name match and sort by alphabetical order or by most recent update date.
+Small application that collects GitHub API v4 repositories using GraphQL and Apollo Client and returns them in an interface prepared to filter by type and host language, as well as search by name match and sort by alphabetical order or by most recent update date.
 
 It is fully responsive, working correctly on any device, whether mobile, tablet or desktop.
+
+The tests have not been fully implemented
+
+Storybook have bien partially implemented
 
 
 ## Technologies
@@ -68,6 +72,8 @@ npm test
 - Authenticate the user: I would like to implement a login with Auth0 or some similar tool. Using the login email (login with GitHub) the application is prepared to, with a few simple adaptations, show its own repositories to the user who logs in, instead of mine.
 - Replace authentication with Github token with authentication with App: I would like to make the authentication process dynamic, so that you would not have to go to GitHub to generate the access token, replacing it with a JWT, in this case for example Auth0.
 - Being able to see the repositories of other users: the two queries (userData and repositoriesData) have been built with variables, so that in the future it would be easy to add a small search engine to see not only my repositories, but those of any user.
+- Implement tests
+- Implement StoryBook and create variants for components
 
 
 ## Check my Repos! 🥷🏽
