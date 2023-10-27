@@ -5,7 +5,6 @@ import useFilterContext from "../../utils/hooks/FilterProvider";
 
 export type SearchBarProps = {
   type: string,
-  languages: string[],
 }
 
 const SearchBar = (props: SearchBarProps) => {

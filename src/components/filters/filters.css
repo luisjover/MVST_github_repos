@@ -1,0 +1,22 @@
+.search-filters {
+    display: flex;
+    align-items: center;
+}
+
+.filter-select {
+    background-color: #f6f8fa;
+    color: #24292e;
+    border: 1px solid #d1d5da;
+    border-radius: 6px;
+    font-size: 16px;
+    padding: 5px 10px;
+    margin-right: 10px;
+    transition: border 0.3s;
+    cursor: pointer;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #0366d6;
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.1);
+}

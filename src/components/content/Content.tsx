@@ -7,6 +7,7 @@ import DotLoader from "react-spinners/DotLoader";
 import ALL_REPOS from "../../graphql/queries/repos.queries";
 import { useEffect, useState } from "react";
 import RepoData from "../../types/repoData";
+import Filters from "../filters/Filters";
 
 
 
@@ -55,8 +56,8 @@ const Content = ({ totalRepos }: Props) => {
         <div className="content-container">
             {uniqueLanguages
                 ? <div className="search-container">
-                    <SearchBar type="Default" languages={uniqueLanguages} />
-
+                    <SearchBar type="Default" />
+                    <Filters languages={uniqueLanguages} />
                 </div>
                 : <DotLoader color="#c68112" />}
             {reposData
