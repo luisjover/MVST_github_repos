@@ -1,9 +1,10 @@
 # GitHub Repos Challenge 🥷🏽
 
 
-<img width="200"  alt="MovieHub" src="https://github.com/luisjover/MVST_github_repos/assets/129792624/51517a11-c03e-41ea-bf86-43928f49f978">
-<img width="600"  alt="MovieHub" src="https://github.com/luisjover/MVST_github_repos/assets/129792624/7892448a-46eb-4000-b9dc-aebf906fefa6">
-<img width="200"  alt="MovieHub" src="https://github.com/luisjover/MVST_github_repos/assets/129792624/b3cf24ac-da9e-40f5-bfea-850eeced5814">
+<img width="200"  alt="MovieHub" src="https://github.com/luisjover/MVST_github_repos/assets/129792624/35172c4e-4e54-4436-a174-6f72a62844e4">
+<img width="600"  alt="MovieHub" src="https://github.com/luisjover/MVST_github_repos/assets/129792624/661ee3cd-bdb1-4b30-b9dd-70b964f95cc1">
+<img width="200"  alt="MovieHub" src="https://github.com/luisjover/MVST_github_repos/assets/129792624/3f4b7211-a79d-4808-a5d2-bb0fef6c7757">
+
 
 
 
