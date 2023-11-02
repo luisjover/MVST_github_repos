@@ -47,10 +47,10 @@ const List = ({ repositories }: Props) => {
         // Sort by last updated or name on Sort Select
         if (sortFilter === "name") {
             partialFiltered.sort((a, b) => a.name.localeCompare(b.name));
-            console.log(partialFiltered);
+
         } else if (sortFilter === "last-updated") {
             partialFiltered.sort((a, b) => new Date(b.updatedAt).getTime() - new Date(a.updatedAt).getTime());
-            console.log(partialFiltered);
+
 
         }
 
